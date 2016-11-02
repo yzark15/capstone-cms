@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage{multirow}
+
+
+\begin{document}
+
+\title{Test Plan}
+\author{Kirk Montour\\ \and Syed Gardezi}
+
+
+\date{\vspace{-5ex}}
+
+\maketitle
+\vspace{5 mm}
+
+\textbf{\Large Functional Requirements Testing}
+
+\vspace{5 mm}
+
+\textbf{Front Controller Subsystem Test Plan :}
+
+\begin{itemize}
+\item Test front controller with home page request.
+\item Test front controller with a secondary page request.
+\item Test front controller with no page name and observe if it defaults to the home page.
+\item Test front controller with a page name that doesn’t exist and observe if error page displays.
+\end{itemize}
+
+\vspace{2 mm}
+\textbf{Login Subsystem Test Plan :}
+
+\begin{itemize}
+\item Test access to the administration area for non-authorized users, non-authorized users should be presented with a login page.
+\item Test whether valid login redirects to Page Management Subsystem.
+\item Test authentication of valid user email and password combination gains access to administration area.
+\item Test authentication of invalid user email address that does not gain access to administration area.
+\item Test whether logging out destroys user session and redirects to login subsystem.
+\end{itemize}
+
+\vspace{2 mm}
+\textbf{User Management Subsystem Test Plan :}
+
+\begin{itemize}
+\item Test whether all authenticated users are listed.
+\item Test ability to create a user for further functional tests.
+\item Test ability to update user password.
+\item Test whether updating a user account to inactive denies access to administration area.
+\item Test ability to delete a user.
+\end{itemize}
+
+\vspace{2 mm}
+\textbf{Page Management Subsystem Test Plan :}
+
+\begin{itemize}
+\item Test whether all pages are listed.
+\item Test ability to create a new page for further functional tests.
+\item Test ability to update page name.
+\item Test ability to update page title.
+\item Test ability to update page content.
+\item Test ability to delete page.
+\end{itemize}
+
+\vspace{2 mm}
+\textbf{\Large Non-functional Requirements Testing}
+\vspace{5 mm}
+
+\textbf{PHP Unit Testing :}
+
+\begin{itemize}
+\item PHPUnit will be used for all PHP unit tests.
+\end{itemize}
+
+\vspace{2 mm}
+\textbf{Javascript Unit Testing :}
+
+\begin{itemize}
+\item QUnit will be used for all Javascript unit tests.
+\end{itemize}
+
+\vspace{2 mm}
+\textbf{HTML Testing :}
+
+\begin{itemize}
+\item All HTML will be validated with an industry standard HTML validator.
+\end{itemize}
+
+\vspace{2 mm}
+\textbf{CSS Testing :}
+
+\begin{itemize}
+\item All CSS will be validated with an industry standard CSS validator.
+\end{itemize}
+
+
+
+
+\end{document}
