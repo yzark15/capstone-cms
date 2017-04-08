@@ -1,0 +1,591 @@
+\documentclass[11pt]{article}
+
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\begin{document}
+
+\title{Requirements Analysis} 
+\author{Team: The Outsiders\\ \\ Kirk Montour (montour)\\ Syed Gardezi (gardezsh)}
+\date{\today}
+  
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Introduction}
+
+\subsection{Acronyms Used}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+UMS & User Management System    \\ \hline
+CMS & Content Management System \\ \hline
+PMS & Page Management System    \\ \hline
+WAS & Web Administration Site   \\ \hline
+URL & Uniform Resource Locator  \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Content Management System}
+Companies spend lots of money maintaining their websites. Companies must hire a full-time web administrator, or must outsource their web administration which is very expensive. There must be a more cost-effective way to maintain a web presence. A company could save a lot of money if they could perform common case web administration tasks for their websites themselves. A Content Management System (CMS) is the perfect software to rectify the situation because a CMS allows non-technical people to update their websites themselves. If you can use a Word Processor, you can update a CMS. If you can update a CMS, you can maintain your own website. If you can maintain your own website, you can save lots of money. For the reasons mentioned above, we have chosen to design a CMS.
+
+\subsection{Customer Needs}
+
+\begin{enumerate}
+  \item Customer needs a website that permits non-technical users to update and manage their own website.
+  \item Customer needs a public web presence.
+  \item Customer needs a way to perform simple common case administrative tasks.
+  \item Customer needs a way to authenticate authorized users to perform common case administrative tasks.
+  \item Customer needs a way to manage authorized users of the website.
+  \item Customer needs a way to manage the pages of the website.
+\end{enumerate}
+
+
+\section{Requirements}
+
+\subsection{System Functions}
+
+\begin{enumerate}
+  \item A CMS allows non-technical users to update and manage their own website with minimal training.
+  \item A website that is accessible to the public will provide a public web presence.
+  \item An administrative website that is accessible only to authorized users to manage the website will provide a way to perform simple common case administrative tasks for non-technical users.
+  \item A login system will allow authorized users to authenticate to perform common case administrative tasks.
+  \item A user management system (UMS) will allow a way to manage authorized users of the website.
+  \item A page management system (PMS) will allow a way to manage pages of the website.
+\end{enumerate}
+
+\subsection{Subsystem Description}
+
+\begin{enumerate}
+  \item A front-end controller subsystem will be used to control the public aspect of the product.
+  \item A back-end controller subsystem will be used to control the private administrative aspects of the product.
+  \item A subsystem of the UMS will allow the creation of new users.
+  \item A subsystem of the UMS system will allow the updating of user accounts.
+  \item A subsystem of the UMS will allow the deletion of users.
+  \item A subsystem of the PMS will allow the creation of new pages.
+  \item A subsystem of the PMS system will allow the updating of pages.
+  \item A subsystem of the PMS system will allow the deletion of pages.
+  
+
+
+\end{enumerate}
+
+\pagebreak
+
+\subsection{Functional Requirements}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 1                          & Requirement Type:                      & 9                                     & Event/BUC/PUC:                                   & n/a                     \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{The product shall display a default web page on front end.}                                                                                                          \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{Will be used by customers to access public website.}                                                                                                                 \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                    \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Users should be able to enter the base URL of the website\\ and be presented with a home page.\end{tabular}}                              \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                              & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                       \\ \hline
+Priority:                                                         & High                       & Dependencies:                          &                                       & Conflicts:                                       &                         \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                    \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 8/16}                                                                                                                                             \\ \hline
+\end{tabular}
+\end{table}
+
+\vspace{10 mm}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 2                         & Requirement Type:                      & 9                                     & Event/BUC/PUC:                                   & n/a                     \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to be able to access\\ the Web Administration Site (WAS).\end{tabular}}                              \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users need to authenticate before updating \\ CMS.\end{tabular}}                                                              \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                   \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Entering the correct WAS URL should present the \\ administrative login page.\end{tabular}}                                              \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                             & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                       \\ \hline
+Priority:                                                         & High                      & Dependencies:                          &                                       & Conflicts:                                       &                         \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                   \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                            \\ \hline
+\end{tabular}
+\end{table}
+
+\vspace{10 mm}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 3                        & Requirement Type:                    & 9                                     & Event/BUC/PUC:                                   & n/a                   \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to be able to login\\ to the WAS.\end{tabular}}                                               \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Entry point for authorized users to access administrative\\ functions.\end{tabular}}                                                \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                              \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users are able to login to WAS area with\\ correct username and password.\end{tabular}}                                  \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                          & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                     \\ \hline
+Priority:                                                         & High                     & Dependencies:                        &                                       & Conflicts:                                       &                       \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                              \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                       \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 4                       & Requirement Type:                 & 9                                    & Event/BUC/PUC:                                    & n/a                 \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to be able to \\ logout of the WAS.\end{tabular}}                                       \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{Exit point for authorized users.}                                                                                                                        \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                        \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{Authorized users are able to logout.}                                                                                                                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                      & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                   \\ \hline
+Priority:                                                         & Medium                  & Dependencies:                     &                                      & Conflicts:                                        &                     \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                        \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 5                       & Requirement Type:                    & 9                                    & Event/BUC/PUC:                                    & n/a                  \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{Product shall permit authorized users to access UMS.}                                                                                                        \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users should have an area to perform common\\ user management tasks.\end{tabular}}                                     \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                            \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users shall be able to access UMS after logging\\ in.\end{tabular}}                                                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                         & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                    \\ \hline
+Priority:                                                         & High                    & Dependencies:                        &                                      & Conflicts:                                        &                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                            \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                     \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 6                     & Requirement Type:                 & 9                                    & Event/BUC/PUC:                                    & n/a                 \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to create new users\\ of product.\end{tabular}}                                       \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users should have the ability to create new \\ users.\end{tabular}}                                              \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                      \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users shall be able to create a new user after\\ logging in.\end{tabular}}                                       \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                    & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                   \\ \hline
+Priority:                                                         & High                  & Dependencies:                     &                                      & Conflicts:                                        &                     \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                      \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 8/16}                                                                                                                               \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 7                   & Requirement Type:                & 9                                    & Event/BUC/PUC:                                    & n/a               \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{Product shall permit authorized users to edit user accounts.}                                                                                     \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users should have the ability to update user \\ data.\end{tabular}}                                         \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                 \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{Authorized users shall be able to update user account.}                                                                                           \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                 & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                 \\ \hline
+Priority:                                                         & High                & Dependencies:                    &                                      & Conflicts:                                        &                   \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                 \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 8/16}                                                                                                                          \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 8                    & Requirement Type:                 & 9                                    & Event/BUC/PUC:                                    & n/a                \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to delete user \\ accounts.\end{tabular}}                                           \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users should have the ability to delete\\ user accounts.\end{tabular}}                                         \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                    \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{Authorized users shall be able to delete user accounts.}                                                                                             \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                   & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                  \\ \hline
+Priority:                                                         & High                 & Dependencies:                     &                                      & Conflicts:                                        &                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                    \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 8/16}                                                                                                                             \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 9                        & Requirement Type:                   & 9                                     & Event/BUC/PUC:                                    & n/a                   \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{Product shall permit authorized users to view current user data.}                                                                                                      \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{Administrators should be able to view current user data.}                                                                                                      \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                              \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users should be able to view a list of current \\ users with the UMS.\end{tabular}}                                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                         & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                     \\ \hline
+Priority:                                                         & High                     & Dependencies:                       &                                       & Conflicts:                                        &                       \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                              \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                       \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 10                    & Requirement Type:                & 9                                     & Event/BUC/PUC:                                    & n/a                \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{Product shall permit authorized users to access the PMS.}                                                                                             \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users need a place to create web pages for\\ their site.\end{tabular}}                                          \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                     \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{Authorized users shall have access to a PMS logging in.}                                                                                              \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                   & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                  \\ \hline
+Priority:                                                         & High                  & Dependencies:                    &                                       & Conflicts:                                        &                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                     \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                              \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 11                    & Requirement Type:                  & 9                                     & Event/BUC/PUC:                                    & n/a                 \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to create pages\\ for their website.\end{tabular}}                                      \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users need the ability to create content for\\ their site.\end{tabular}}                                           \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                        \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users can create a web page after logging \\ in.\end{tabular}}                                                     \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                     & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                   \\ \hline
+Priority:                                                         & High                  & Dependencies:                      &                                       & Conflicts:                                        &                     \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                        \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 9/16}                                                                                                                                 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 12                       & Requirement Type:                     & 9                                     & Event/BUC/PUC:                                    & n/a                    \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to see a list of \\ the current pages in the site.\end{tabular}}                                 \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users should be able to see current pages\\ of the website.\end{tabular}}                                                   \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                 \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users will be able to see a list of current \\ pages after accessing the PMS.\end{tabular}}                                 \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                           & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                      \\ \hline
+Priority:                                                         & High                     & Dependencies:                         &                                       & Conflicts:                                        &                        \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                 \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                          \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 13                      & Requirement Type:                    & 9                                     & Event/BUC/PUC:                                    & n/a                  \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to add pages to\\ website.\end{tabular}}                                                     \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Whole purpose of product is for non-technical users \\ to update their own website.\end{tabular}}                                  \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                             \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users can add pages to the website after \\ logging in.\end{tabular}}                                                   \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                         & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                    \\ \hline
+Priority:                                                         & High                    & Dependencies:                        &                                       & Conflicts:                                        &                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                             \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 9/16}                                                                                                                                      \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 14                    & Requirement Type:                  & 9                                     & Event/BUC/PUC:                                    & n/a                \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to update pages\\ on website.\end{tabular}}                                            \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users need ability to update pages on their\\ website.\end{tabular}}                                              \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                       \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users can update a page on the website \\ after logging in.\end{tabular}}                                         \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                     & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                  \\ \hline
+Priority:                                                         & High                  & Dependencies:                      &                                       & Conflicts:                                        &                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                       \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 9/16}                                                                                                                                \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 15                    & Requirement Type:                 & 9                                     & Event/BUC/PUC:                                    & n/a                \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to delete pages\\ from website.\end{tabular}}                                         \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users will need ability to delete pages\\ from website\end{tabular}}                                             \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                      \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users can delete pages from the website\\ after logging in.\end{tabular}}                                        \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                    & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                  \\ \hline
+Priority:                                                         & High                  & Dependencies:                     &                                       & Conflicts:                                        &                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                      \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Oct. 9/16}                                                                                                                               \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 16                     & Requirement Type:                   & 9                                     & Event/BUC/PUC:                                    & n/a                  \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to change the \\ theme for the website.\end{tabular}}                                      \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Owner should be able to change the look of their\\ website.\end{tabular}}                                                        \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                           \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Authorized users can change the theme of the website\\ after logging in.\end{tabular}}                                           \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                       & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                    \\ \hline
+Priority:                                                         & High                   & Dependencies:                       &                                       & Conflicts:                                        &                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                           \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                    \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Performance Requirements}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 17                             & Requirement Type:                           & 12a                                    & Event/BUC/PUC:                                   & n/a                         \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit authorized users to perform \\ administrative tasks within one second of executing\\ command.\end{tabular}}                        \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Note a huge corporate database, administrative \\ interactions should seem instantaneous.\end{tabular}}                                                 \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                                  \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Measure time to POST data to the server and the time\\ to GET the html page. Add the two previously mentioned\\ times.\end{tabular}}                    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                                       & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                           \\ \hline
+Priority:                                                         & High                           & Dependencies:                               &                                        & Conflicts:                                       &                             \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                                  \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                                           \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 18                        & Requirement Type:                     & 12a                                    & Event/BUC/PUC:                                   & n/a                     \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall permit normal users to access webpages within\\ two seconds of webpage request.\end{tabular}}                              \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{People tend to leave websites if they are left waiting too long.}                                                                                                   \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                   \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{Measure the time to load all files belonging to a webpage.}                                                                                                         \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                            & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                       \\ \hline
+Priority:                                                         & High                      & Dependencies:                         &                                        & Conflicts:                                       &                         \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                   \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                            \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 19                              & Requirement Type:                           & 12c                                    & Event/BUC/PUC:                                   & n/a                          \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall display webpage in content area of webpage\\ exactly as an authorized user enters it in the editor.\end{tabular}}                           \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}One of products features is for non-technical users to update\\ their websites with a what you see is what you get editor.\end{tabular}}                  \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                                    \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}After adding webpage, click the "VIEW PAGE" button to\\ observe that page content is added correctly.\end{tabular}}                                       \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                                        & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                            \\ \hline
+Priority:                                                         & High                            & Dependencies:                               &                                        & Conflicts:                                       &                              \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                                    \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                                             \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 20                        & Requirement Type:                     & 12d                                    & Event/BUC/PUC:                                   & n/a                    \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}The product shall be available 24 hours a day, 365 days \\ per year.\end{tabular}}                                                     \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{Public websites should always be available.}                                                                                                                       \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                  \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product needs to always be available for people seeking \\ information about organization.\end{tabular}}                                \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                            & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                      \\ \hline
+Priority:                                                         & High                      & Dependencies:                         &                                        & Conflicts:                                       &                        \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                  \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                           \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 21                      & Requirement Type:                   & 12e                                    & Event/BUC/PUC:                                   & n/a                  \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product must be able to handle incorrect form data without\\ crashing the WAS.\end{tabular}}                                      \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product must be able to handle situations where incorrect \\ data is entered.\end{tabular}}                                       \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                            \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product displays informative error message when incorrect\\ form data is entered.\end{tabular}}                                   \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                        & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                    \\ \hline
+Priority:                                                         & High                    & Dependencies:                       &                                        & Conflicts:                                       &                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                            \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                     \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 22                       & Requirement Type:                    & 12e                                    & Event/BUC/PUC:                                   & n/a                   \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product must not allow general public to access web directories\\ through URL.\end{tabular}}                                         \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product must be able to handle situations where general public\\ enter incorrect URL's.\end{tabular}}                                \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                               \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product front end has error pages when incorrect URL's are\\ entered.\end{tabular}}                                                  \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                          & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                     \\ \hline
+Priority:                                                         & High                     & Dependencies:                        &                                        & Conflicts:                                       &                       \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                               \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                        \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 23                     & Requirement Type:                   & 12f                                    & Event/BUC/PUC:                                   & n/a                  \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall accommodate 300 concurrent connections from \\ the general public.\end{tabular}}                                   \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{Precaution to make sure website does not crash.}                                                                                                            \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                           \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{}                                                                                                                                                           \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                       & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                    \\ \hline
+Priority:                                                         & High                   & Dependencies:                       &                                        & Conflicts:                                       &                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                           \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                    \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 24                          & Requirement Type:                      & 12g                                    & Event/BUC/PUC:                                   & n/a                     \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}Product shall be scalable with the ability to add functionality\\ with custom designed plugins.\end{tabular}}                             \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{In case functionality needs to be added.}                                                                                                                              \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                                      \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{}                                                                                                                                                                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                               & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                       \\ \hline
+Priority:                                                         & Medium                      & Dependencies:                          &                                        & Conflicts:                                       &                         \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                                      \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                               \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Requirement \#                                                    & 25                        & Requirement Type:                    & 12h                                     & Event/BUC/PUC:                                  & n/a                  \\ \hline
+Description:                                                      & \multicolumn{5}{l|}{Product shall be operational for as long as it is useful.}                                                                                                      \\ \hline
+Rationale:                                                        & \multicolumn{5}{l|}{\begin{tabular}[c]{@{}l@{}}As long as stakeholders have a need for a web presence,\\ product shall be available.\end{tabular}}                                  \\ \hline
+Originator:                                                       & \multicolumn{5}{l|}{}                                                                                                                                                               \\ \hline
+Fit Criterion:                                                    & \multicolumn{5}{l|}{}                                                                                                                                                               \\ \hline
+\begin{tabular}[c]{@{}l@{}}Customer \\ Satisfaction:\end{tabular} & \multicolumn{2}{l|}{5}                                           & \multicolumn{2}{l|}{\begin{tabular}[c]{@{}l@{}}Customer \\ Dissatisfaction:\end{tabular}} & 0                    \\ \hline
+Priority:                                                         & Medium                    & Dependencies:                        &                                         & Conflicts:                                      &                      \\ \hline
+\begin{tabular}[c]{@{}l@{}}Supporting \\ Materials:\end{tabular}  & \multicolumn{5}{l|}{}                                                                                                                                                               \\ \hline
+History:                                                          & \multicolumn{5}{l|}{Last modified Apr. 2/17}                                                                                                                                        \\ \hline
+\end{tabular}
+\end{table}
+
+
+\section{Resources Needed}
+
+\subsection{Available Data}
+
+\begin{enumerate}
+  \item Page data for web pages stored in database.
+  \item User data for registered users stored in database.
+  \item Group data for groups stored in database.
+\end{enumerate}
+
+\subsection{Hardware}
+
+\begin{enumerate}
+  \item Apache5 web server to host website.
+\end{enumerate}
+
+
+
+\subsection{Software Tools }
+
+\begin{enumerate}
+  \item Google Chrome will be used for testing and developing html, CSS, Javascript.
+  \item Mozilla Firefox will be used for testing and developing html, CSS, Javascript.
+  \item Notepad++ will be used for developing in PHP; Javascript, CSS, and html.
+  \item PHPUnit will be used for PHP unit testing.
+  \item The PHPMyAdmin will be used for database functionality and development.
+  \item Github will be used for version control and collaboration.
+\end{enumerate}
+
+
+\subsection{Operating Environment}
+
+\begin{enumerate}
+  \item PHP5 will be the operating environment for the backend web scripting language, for dynamic server side functionality of the product.
+  \item Javascript will be the operating environment for dynamic aspects of client side functionality of the product.
+  \item html5 and CSS3 will be the operating environment for static aspects of the product.
+  \item CSS3 will be used for UI presentation.
+  \item MySQL5 will be the operating environment for the database operations of the product.
+  \item Apache2.4.9 will be the operating environment for the web server.
+\end{enumerate}
+
+\section{System Feasibility }
+
+\subsection{Economic feasibility}
+The prime motivation for this project is to reduce costs of maintaining a web presence. Since all the development software is free and open source, the customer will only pay for labour, training, and the cost of a web server if they do not already have one. As soon as the CMS is built and the owner/user is trained, the user/owner starts getting a return on their investment every time they perform a common case web administration task for their own website. After a certain amount of website updates by the owner/user the cost of the CMS and training will have paid for itself. After the CMS and training has been paid for by the savings of the owner/user perform common case web tasks on their own, the owner/user will save money every single time they update their own website. A low-end web shop charges 50 dollars an hour, so every update the owner/user makes themselves after the CMS has paid for itself, it saves a significant amount of money from that moment on for the user/owner.  Website can be updated whimsically without consideration for cost.
+
+\subsection{Technical feasibility}
+
+\begin{enumerate}
+  \item The hardware for a CMS is technically feasible. An Apache5 web server needs to be set up in house, or hosted on a Web host.
+  \item The static aspects of the client side web pages of the CMS will be written in HTML5 and CSS3, two industry standard technologies. The technical aspects of HTML5 and CSS3 are not difficult, which makes developing the static aspects of the client side web pages technically feasible.
+  \item The dynamic aspects of the client side web pages of the CMS will be written in Javascript, another industry standard technology. The technical aspects of Javascript will not be difficult to handle, which makes developing the dynamic aspect of the client side web pages technically feasible.
+  \item The dynamic aspects of the server side web pages will be scripted in PHP, another industry standard technology. The technical aspects of PHP will be the most difficult of the project, but not insurmountable and technically feasible.
+  \item All database functionality will be handled by MySQL, which is a standard database technology. Handling the technical amalgamation of PHP and MySQL will be a challenge, but also not insurmountable and technically feasible.
+  \item Two software developers handling the technical programming will be more than enough. Modularizing the programming tasks into smaller tasks should sufficiently reduce the difficulty for the software developers handling the technical aspects of the aforementioned technologies, and therefore make the product technically feasible.
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
