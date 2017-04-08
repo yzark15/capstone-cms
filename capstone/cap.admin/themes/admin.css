@@ -1,0 +1,136 @@
+*{
+	box-sizing: border-box;
+}
+#header {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: #F8F8F8;
+}
+#header h1{
+	
+	text-align: center;
+	color: darkgray;
+}
+#wrapper h1{
+	
+	text-align: center;
+	color: darkgray;
+}
+#menu-top ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: darkgray;
+}
+#menu-top li{
+	 float: left;
+}
+#menu-top li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+	
+}
+#menu-top li a:hover{
+	background-color: #ddd;
+}
+.left-menu {
+    border: 1px solid lightgray;
+    float: left;
+    width: 19%;
+    padding: 10px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+}
+.has-left-menu{
+	width: 80%;
+	float: right;
+}
+#right-click {
+    margin-top: 5px;
+}
+#left-menu ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: darkgray;
+}
+#left-menu li a{
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+#left-menu li a:hover{
+	background-color: #ddd;
+}
+#user-table table {
+    min-width: 50%;
+    margin-left: 110px;
+}
+#user-table table tr:nth-child(odd){
+	background-color: darkgray;
+	color: white;
+	
+}
+#user-table table {
+    min-width: 50%;
+    margin-left: 110px;
+    text-align: center;
+    padding: 15px;
+	
+}
+#user-table table a{
+	text-decoration: none;
+}
+#create-user {
+    background-color: darkgray;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 125px;
+    position: relative;
+    top: 30px;
+}
+#set-theme{
+	width:250px;
+	text-align:center;
+	border:1px solid #000;
+	margin:5px;
+	height:250px;
+	float:left;
+	background-color: lightgray;
+}
+#login-wrapper {
+    width: 800px;
+    margin: auto;
+    border: 1px solid darkgray;
+}
+#login-wrapper .tabs {
+    border: 1px solid darkgray;
+    margin: auto;
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+#sub-user{
+	background-color: darkgray;
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-left: 125px;
+	position: relative;
+	top: 10px;
+	margin-bottom: 30px;
+}

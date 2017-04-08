@@ -1,0 +1,52 @@
+*{
+	box-sizing: border-box;
+}
+
+#wrapper{
+	width: 800px;
+	margin: auto;
+}
+
+#header {
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+
+.tabs {
+    border: 1px solid black;
+    width: 500px;
+    margin: auto;
+}
+
+.tabs ul {
+    border: 1px solid black;
+	list-style-type: none;
+    width: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+
+#tab1 {
+    border: 1px solid black;
+    clear: left;
+}
+
+#tab2 {
+    border: 1px solid black;
+}
+
+form {
+    padding: 10px;
+}
+
+li {
+    float: left;
+}
+
+li a{
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	padding: 10px;
+}
